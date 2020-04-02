@@ -1,5 +1,13 @@
 # RPM Spec for Consul Agent for Vault Storage
 
+Build RPM for Consul Agent for Vault Storage
+
+In a Vault deployment where you want to use one Consul agent for service discovery and a second agent for Consul storage,
+you will need to run the second agent on non-default ports. This RPM deploys a second Consul agent with its own configuration
+and data directories and configures the service to run on non-default ports.
+
+Basically a clone of https://github.com/tomhillable/consul-rpm repurposed for Vault storage Consul agent
+
 Tries to follow the [packaging guidelines](https://fedoraproject.org/wiki/Packaging:Guidelines) from Fedora.
 
 * Binary: `/usr/bin/consul-vault`
