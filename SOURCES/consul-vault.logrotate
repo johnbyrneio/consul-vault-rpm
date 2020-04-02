@@ -1,0 +1,9 @@
+/var/log/consul-vault {
+    daily
+    missingok
+    rotate 7
+    compress
+    copytruncate
+    notifempty
+    create 600  consul-vault consul-vault
+}

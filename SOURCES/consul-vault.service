@@ -1,0 +1,16 @@
+[Unit]
+Description=Consul agent for Vault storage
+Documentation=http://www.consul.io
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=consul-vault
+Group=consul-vault
+EnvironmentFile=-/etc/sysconfig/consul-vault
+ExecStart=/usr/bin/consul-vault $CMD_OPTS
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
